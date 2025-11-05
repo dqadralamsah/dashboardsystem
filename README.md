@@ -1,6 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Frontend Technical Test — Product Dashboard
+
+Program sederhana **Product Management Dashboard** dengan Next.js 14 (TypeScript)
+implementasi CRUD dengan API ke Backend Service
+
+## Tech Stack
+
+Frontend: [Next.js 14 (App Router)](https://nextjs.org/)
+UI Library: [Ant Design](https://ant.design/)
+Language: TypeScript
+HTTP Client: Axios
+Backend (API Proxy Target): Express + SQLite
+State: useState, useEffect (React Hooks)
+
+## Folder Structure
+
+front-end/
+├── app/
+│ ├── products/
+│ │ ├── page.tsx # Product list page (Antd Table)
+│ │ ├── ProductModal.tsx # Modal for Create & Edit
+│ │ └── ProductForm.tsx # Form fields used by modal
+│ └── api/
+│ └── product/route.ts # GET, POST, PUT, DELETE proxy routes
+│ └── products/route.ts # List products with pagination/search
+├── utils/
+│ └── axiosClient.ts # Axios instance configuration
+├── components/
+│ └── SearchBox.tsx # Debounced search input
+├── package.json
+└── tsconfig.json
 
 ## Getting Started
+
+Install Dependencies
+`npm install`
 
 First, run the development server:
 
@@ -14,23 +47,15 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Buka [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## API Endpoint
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+/api/products | GET | /api/web/v1/products | List Produk + Pagination dan Pencarian
+/api/product | GET | /api/web/v1/product | Single Product
+/api/product | POST | /api/web/v1/product | Create new product
+/api/product | PUT | /api/web/v1/product | Update existing product
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Name: Diqaaall
+Role: Frontend Developer (Technical Test Submission)
+Stack: Next.js | TypeScript | Ant Design | Axios
